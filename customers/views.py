@@ -1,8 +1,7 @@
-from django.db.models import QuerySet
-from rest_framework import viewsets
-
 from customers.models import Customer
 from customers.serializers import CustomerSerializer
+from django.db.models import QuerySet
+from rest_framework import viewsets
 
 
 class CustomerViewSet(viewsets.ModelViewSet):

@@ -1,10 +1,8 @@
-from django.test import TestCase
-
 from customers.models import Customer
+from django.test import TestCase
 
 
 class CustomerModelTests(TestCase):
-
     def setUp(self):
         # Create a Customer instance for use in tests
         self.customer = Customer.objects.create(
@@ -25,5 +23,7 @@ class CustomerModelTests(TestCase):
 
     def test_default_gender(self):
         # Test the default value of the gender field
-        customer = Customer.objects.create(name="Default Gender", age=22, favorite_number=5)
+        customer = Customer.objects.create(
+            name="Default Gender", age=22, favorite_number=5
+        )
         self.assertEqual(customer.gender, Customer.OTHER)
